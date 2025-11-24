@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:03:52 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/11/24 11:22:19 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:30:10 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,6 @@ int main()
 	Bureaucrat high("high", 0);
 	Bureaucrat low(200);
 }
+
+//still need to implement the << overloader
+//	<name>, bureaucrat grade <grade>
