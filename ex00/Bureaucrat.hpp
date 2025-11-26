@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 15:50:43 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/11/24 11:14:05 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:43:57 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,24 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat& operator=(Bureaucrat const& a);
 
-		void GradeTooHighException();
-		void GradeTooLowException();
-		std::string getName();
-		int getGrade();
-		void incGrade(int grade);
-		void decGrade(int grade);
+		std::string	getName();
+		int			getGrade();
+		void		incGrade(int grade);
+		void		decGrade(int grade);
+
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
 };
+
+std::ostream	&operator<<(std::ostream &out, Bureaucrat bur);
 
 #endif

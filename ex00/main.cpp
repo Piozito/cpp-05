@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:03:52 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/11/24 11:30:10 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:42:07 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,63 @@
 
 int main()
 {
-	Bureaucrat a("Joao", 12);
-
-	std::cout << "Const name: " << a.getName() << std::endl;
-	std::cout << "Old grade: " << a.getGrade() << std::endl;
-	a.decGrade(100);
-	std::cout << "New grade: " << a.getGrade() << std::endl;
-	a.incGrade(50);
-	std::cout << "Final grade: " << a.getGrade() << std::endl;
-
 	std::cout << "\n===== Exception tests =====\n" << std::endl;
 
-	Bureaucrat toohigh;
-	Bureaucrat toolow;
+	Bureaucrat a("Joao", 12);
+	Bureaucrat b(24);
+	Bureaucrat c("Felipe");
+	Bureaucrat d;
 
-	toohigh.incGrade(200);
-	toolow.decGrade(200);
 
-	Bureaucrat high("high", 0);
-	Bureaucrat low(200);
+	std::cout << a;
+	std::cout << b;
+	std::cout << c;
+	std::cout << d;
+
+
+	std::cout << "\n===== Declaration Exception tests =====\n" << std::endl;
+
+	try
+	{
+		Bureaucrat high("h", -1);
+	}
+	catch(std::exception &exp)
+	{
+		std::cerr << exp.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat low("l", 200);
+	}
+	catch(std::exception &exp)
+	{
+		std::cerr << exp.what() << std::endl;
+	}
+
+	std::cout << "\n===== Inc/Dec Exception tests =====\n" << std::endl;
+
+	try
+	{
+		Bureaucrat high;
+
+		high.incGrade(1000);
+	}
+	catch(std::exception& exp)
+	{
+		std::cerr << exp.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat low;
+
+		low.decGrade(1000);
+	}
+	catch(std::exception& exp)
+	{
+		std::cerr << exp.what() << std::endl;
+	}
+	
+
 }
 
 //still need to implement the << overloader
