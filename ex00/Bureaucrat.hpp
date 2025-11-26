@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 15:50:43 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/11/26 15:43:57 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:49:21 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Bureaucrat
 
 		std::string	getName();
 		int			getGrade();
-		void		incGrade(int grade);
-		void		decGrade(int grade);
+		void		incGrade();
+		void		decGrade();
 
 	class GradeTooHighException : public std::exception
 	{

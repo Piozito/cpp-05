@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:03:52 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/11/26 15:42:07 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:50:45 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,24 @@ int main()
 
 	try
 	{
-		Bureaucrat high;
+		Bureaucrat high(1);
 
-		high.incGrade(1000);
+		high.incGrade();
 	}
-	catch(std::exception& exp)
+	catch(std::exception & e)
 	{
-		std::cerr << exp.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
-		Bureaucrat low;
+		Bureaucrat low; //grade is 150 by default
 
-		low.decGrade(1000);
+		low.decGrade();
 	}
-	catch(std::exception& exp)
+	catch(std::exception & e)
 	{
-		std::cerr << exp.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	
 
 }
-
-//still need to implement the << overloader
-//	<name>, bureaucrat grade <grade>
