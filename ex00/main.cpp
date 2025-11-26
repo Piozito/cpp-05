@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:03:52 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/11/26 15:50:45 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/11/26 19:17:02 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int main()
 	{
 		Bureaucrat high("h", -1);
 	}
-	catch(std::exception &exp)
+	catch(Bureaucrat::GradeTooHighException & e)
 	{
-		std::cerr << exp.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
 		Bureaucrat low("l", 200);
 	}
-	catch(std::exception &exp)
+	catch(Bureaucrat::GradeTooLowException & e)
 	{
-		std::cerr << exp.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << "\n===== Inc/Dec Exception tests =====\n" << std::endl;
@@ -55,7 +55,7 @@ int main()
 
 		high.incGrade();
 	}
-	catch(std::exception & e)
+	catch(Bureaucrat::GradeTooHighException & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -65,7 +65,7 @@ int main()
 
 		low.decGrade();
 	}
-	catch(std::exception & e)
+	catch(Bureaucrat::GradeTooLowException & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
