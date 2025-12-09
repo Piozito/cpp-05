@@ -6,54 +6,34 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:03:52 by aaleixo-          #+#    #+#             */
-/*   Updated: 2025/12/09 11:11:12 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:25:07 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	std::cout << "\n===== Form success tests =====\n"
-			  << std::endl;
-
 	try
 	{
-		Form success("Success", 50, 10);
-		Bureaucrat joao("Joao", 3);
+		Bureaucrat president("president", 1);
+		Intern someRandomIntern;
+		AForm *rrf;
 
-		joao.signForm(success);
+		rrf = someRandomIntern.makeForm("NA", "Ricardo");
+		rrf = someRandomIntern.makeForm("Presidential Pardon", "Jose");
+
+		president.signForm(*rrf);
+		president.executeForm(*rrf);
+
+		if (rrf)
+			delete rrf;
 	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	std::cout << "\n===== Form Exception tests =====\n"
-			  << std::endl;
-	try
-	{
-
-		Form test("A normal form", 50, 10);
-		Bureaucrat testfail("Failing", 100);
-
-		std::cout << test;
-
-		testfail.signForm(test);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << "\n===== Form grade too low tests =====\n"
-			  << std::endl;
-
-	try
-	{
-		Form fail("fail", 200, 10);
-	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

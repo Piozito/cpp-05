@@ -6,14 +6,14 @@
 #    By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 15:49:57 by aaleixo-          #+#    #+#              #
-#    Updated: 2025/12/09 15:03:59 by aaleixo-         ###   ########.fr        #
+#    Updated: 2025/12/09 15:03:33 by aaleixo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = abstractMoreForms
+NAME = Intern
 SOURCES = \
 	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
-	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp Intern.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 CXX = c++
