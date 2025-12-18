@@ -30,7 +30,7 @@ protected:
 	virtual bool beSigned(Bureaucrat a);
 
 private:
-	std::string _name;
+	const std::string _name;
 	const int _signGrade;
 	const int _execGrade;
 	bool _signed;
